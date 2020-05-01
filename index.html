@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>Parth Dani : Play</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <audio controls style="display: none" id="audio">
+        <source src="disappointed.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <section>
+        <div class="blur"></div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).mousemove(function(e) {
+            var X = e.pageX;
+            var Y = e.pageY;
+            $(".blur").css('background', 'radial-gradient(circle at ' + X + 'px ' + Y + 'px,#87ceeb 0.5%, transparent 2%,#000 30%');
+        })
+        var x = document.getElementById("audio");
+
+        function playAudio() {
+            x.play();
+        }
+        $(document).on('click', function() {
+            playAudio();
+        })
+    </script>
+</body></html>
